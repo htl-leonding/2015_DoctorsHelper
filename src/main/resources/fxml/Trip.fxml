@@ -8,7 +8,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TripController">
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TripController">
    <children>
       <FlowPane prefHeight="50.0" prefWidth="750.0">
          <children>
@@ -129,6 +129,7 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </FlowPane.margin>
       </FlowPane>
+      <Label fx:id="lbPdfSaved" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="750.0" />
       <FlowPane alignment="BOTTOM_RIGHT" hgap="15.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="800.0">
          <children>
             <Label text="Andere anzeigen: " />

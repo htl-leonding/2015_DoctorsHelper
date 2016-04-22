@@ -90,7 +90,8 @@ public class WindowUtil {
     }
 
     public static void showInfoDialog(String message){
-        Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);
+        Alert infoAlert = new Alert(Alert.AlertType.ERROR);
+        infoAlert.setHeaderText("Fehler");
         infoAlert.setContentText(message);
         infoAlert.showAndWait();
     }

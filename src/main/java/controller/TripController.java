@@ -39,6 +39,8 @@ public class TripController {
     private ListView lvAbsent;
     @FXML
     private Button btSave;
+    @FXML
+    private Label lbPdfSaved;
 
     private Model model;
 
@@ -95,7 +97,7 @@ public class TripController {
     @FXML
     void onSave(ActionEvent event) {
         if (tfName.getText().isEmpty() || absentStudents.size() + unselectedStudents.size() + selectedStudents.size() == 0){
-            WindowUtil.showInfoDialog("Alle Daten eingeben (Name, Teilnehmer)");
+            WindowUtil.showInfoDialog("Es müssen alle Informationen eingegeben werden. Bitte kontrollieren Sie, ob der Veranstaltungsname gesetzt und Schüler ausgewählt wurden.");
         }
         else {
 
@@ -200,13 +202,14 @@ public class TripController {
 
     public void onPdf(ActionEvent actionEvent) {
         if (tfName.getText().isEmpty() || absentStudents.size() + unselectedStudents.size() + selectedStudents.size() == 0){
-            WindowUtil.showInfoDialog("Alle Daten eingeben (Name, Teilnehmer)");
+            WindowUtil.showInfoDialog("Es müssen alle Informationen eingegeben werden. Bitte kontrollieren Sie, ob der Veranstaltungsname gesetzt und Schüler ausgewählt wurden.");
         } else {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
             try {
                 PDFUtil.createSchoolTripPDF(tfName.getText(), LocalDate.now().format(formatter),
                         (String) cbClazz.getSelectionModel().getSelectedItem(), "", selectedStudents.size(),
                         unselectedStudents, absentStudents);
+                WindowUtil.setLabelMessageAnimation(lbPdfSaved, "PDF am Desktop gespeichert");
             } catch(Exception e){
 
             }

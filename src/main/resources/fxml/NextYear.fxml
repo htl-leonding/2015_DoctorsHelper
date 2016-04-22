@@ -20,7 +20,7 @@
             <ComboBox fx:id="cbLastYear" prefWidth="100.0" />
          </children>
       </FlowPane>
-      <Label prefHeight="150.0" prefWidth="400.0" text="Es werden alle Schüler um eine Klasse weitergeführt (2A -&gt; 3A). Die letzten Jahrgänge werden dementsprechend gekennzeichnet. Bei wiederholenden Schülern oder Umstrukturierungen (z.B. Zusammenlegung) von Klassen müssen die Schüler entweder über Bearbeiten angepasst werden, oder es wird eine neue Klassenliste als Import verwendet. " wrapText="true">
+      <Label prefHeight="150.0" prefWidth="400.0" text="Es werden alle Schüler um eine Klasse weitergeführt. Sollte ein Schüler aktuell in der 2ten Klasse sein, wird er also in die 3te Klasse geschoben. Alle Dokumente und sonstige Daten des Schülers bleiben dabei erhalten. In der Textbox können Sie angeben, welche Klasse der letzte Jahrgang ist. Alle Schüler die nun aktuell im letzten Jahrgang sind, werden als Schulabgänger angeführt." wrapText="true">
          <FlowPane.margin>
             <Insets />
          </FlowPane.margin>
