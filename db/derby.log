@@ -1,0 +1,18 @@
+Tue May 12 13:21:19 CEST 2015 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Tue May 12 13:24:20 CEST 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-014d-47db-87d8-00001d62141d 
+on database directory memory:/Users/stuetz/svn.projects/2013doctorsHelper/Schooldoctor/db/testdb with class loader sun.misc.Launcher$AppClassLoader@3cd1a2f1 
+Loaded from file:/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_45-b14
+user.dir=/Users/stuetz/svn.projects/2013doctorsHelper/Schooldoctor/db
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.10.3
+derby.system.home=/Users/stuetz/svn.projects/2013doctorsHelper/Schooldoctor/db
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Tue May 12 13:24:22 CEST 2015:
+Shutting down instance a816c00e-014d-47db-87d8-00001d62141d on database directory memory:/Users/stuetz/svn.projects/2013doctorsHelper/Schooldoctor/db/testdb with class loader sun.misc.Launcher$AppClassLoader@3cd1a2f1 
+Tue May 12 13:24:22 CEST 2015 Thread[DRDAConnThread_3,5,main] (DATABASE = memory:testdb), (DRDAID = {2}), Database 'memory:testdb' dropped.

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TripController">
+   <children>
+      <FlowPane prefHeight="50.0" prefWidth="750.0">
+         <children>
+            <Label id="header1" alignment="CENTER" prefHeight="50.0" prefWidth="800.0" text="Schulveranstaltung erstellen">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <FlowPane alignment="CENTER" hgap="75.0" prefHeight="50.0" prefWidth="800.0">
+               <children>
+                  <TextField fx:id="tfName" prefWidth="250.0" promptText="Veranstaltungsname" />
+                  <ComboBox fx:id="cbClazz" prefWidth="150.0" promptText="Klasse" />
+               </children>
+            </FlowPane>
+         </children>
+      </FlowPane>
+      <FlowPane alignment="BOTTOM_LEFT" hgap="200.0" prefHeight="25.0" prefWidth="800.0">
+         <children>
+            <Label text="    Abwesend">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="    Keine Teilnahme">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="  Teilnahme">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <FlowPane.margin>
+            <Insets left="50.0" right="50.0" />
+         </FlowPane.margin>
+      </FlowPane>
+      <FlowPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="800.0">
+         <children>
+            <ListView fx:id="lvAbsent" prefHeight="300.0" prefWidth="190.0" />
+            <FlowPane alignment="CENTER" orientation="VERTICAL" prefHeight="300.0" prefWidth="100.0" vgap="15.0">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#onSingleUnAbsent" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../styles_visuals/arrowRight.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#onSingleAbsent" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../styles_visuals/arrowLeft.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#onAllUnAbsent" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../styles_visuals/doubleArrowRight.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#onAllAbsent" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../styles_visuals/doubleArrowLeft.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </FlowPane>
+            <ListView fx:id="lvUnselected" prefHeight="300.0" prefWidth="190.0" />
+            <FlowPane alignment="CENTER" orientation="VERTICAL" prefHeight="300.0" prefWidth="100.0" vgap="15.0">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#onSingleSelected" pickOnBounds="true" preserveRatio="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <image>
+                        <Image url="@../styles_visuals/arrowRight.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#onSingleUnselected" pickOnBounds="true" preserveRatio="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <image>
+                        <Image url="@../styles_visuals/arrowLeft.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#onAllSelected" pickOnBounds="true" preserveRatio="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <image>
+                        <Image url="@../styles_visuals/doubleArrowRight.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#onAllUnselected" pickOnBounds="true" preserveRatio="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <image>
+                        <Image url="@../styles_visuals/doubleArrowLeft.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </FlowPane>
+            <ListView fx:id="lvSelected" prefHeight="300.0" prefWidth="190.0" />
+         </children>
+         <FlowPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </FlowPane.margin>
+      </FlowPane>
+      <FlowPane alignment="BOTTOM_RIGHT" hgap="15.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="800.0">
+         <children>
+            <Label text="Andere anzeigen: " />
+            <ComboBox fx:id="cbTrips" prefWidth="150.0">
+               <FlowPane.margin>
+                  <Insets right="75.0" />
+               </FlowPane.margin>
+            </ComboBox>
+            <Button id="button" mnemonicParsing="false" onAction="#onCancel" prefWidth="125.0" text="Abbrechen" />
+            <Button id="button" mnemonicParsing="false" onAction="#onPdf" prefWidth="125.0" text="PDF" />
+            <Button id="button" fx:id="btSave" mnemonicParsing="false" onAction="#onSave" prefWidth="125.0" text="Speichern" />
+         </children>
+         <FlowPane.margin>
+            <Insets />
+         </FlowPane.margin>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </FlowPane>
+   </children>
+</FlowPane>

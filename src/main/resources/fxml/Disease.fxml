@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="297.0" prefWidth="205.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DiseaseController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="42.0" minHeight="37.0" prefHeight="42.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="55.0" minHeight="33.0" prefHeight="39.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="121.0" minHeight="69.0" prefHeight="116.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <TextField fx:id="tfDisease" promptText="Krankheit" />
+        <TextArea fx:id="taAdditionalInformation" prefHeight="78.0" prefWidth="190.0" promptText="Zusätzliche Informationen" wrapText="true" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin></TextArea>
+        <ComboBox fx:id="cbLevel" prefWidth="200.0" promptText="Schweregrad" GridPane.rowIndex="1">
+<GridPane.margin>
+<Insets />
+</GridPane.margin></ComboBox><HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
+<children>
+        <Button id="button" mnemonicParsing="false" onAction="#onSave" prefHeight="32.0" prefWidth="111.0" text="Speichern" textAlignment="CENTER" GridPane.rowIndex="3" HBox.hgrow="SOMETIMES">
+            <GridPane.margin>
+                <Insets left="100.0" />
+            </GridPane.margin>
+<HBox.margin>
+<Insets bottom="5.0" right="5.0" />
+</HBox.margin>
+        </Button><ImageView fx:id="exit" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#onExit" pickOnBounds="true" preserveRatio="true" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+<image>
+<Image url="@../styles_visuals/dh_exitLogin.png" />
+</image>
+<GridPane.margin>
+<Insets right="20.0" />
+</GridPane.margin>
+<HBox.margin>
+<Insets bottom="10.0" left="20.0" />
+</HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ImageView>
+</children>
+<padding>
+<Insets left="15.0" top="15.0" />
+</padding></HBox>
+      <DatePicker fx:id="dpDate" prefHeight="25.0" prefWidth="191.0" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </DatePicker>
+    </children>
+<padding>
+<Insets left="5.0" right="10.0" />
+</padding>
+</GridPane>

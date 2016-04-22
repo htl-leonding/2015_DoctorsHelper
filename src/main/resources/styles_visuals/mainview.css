@@ -1,0 +1,100 @@
+#flowpaneName{
+    -fx-background-color:#3498db; 
+}
+
+.text-field { 
+    -fx-font: 13px "Calibri light";
+    -fx-prompt-text-fill: #666666; 
+    -fx-background-radius: 0;
+    -fx-border-width: 0.1;
+    -fx-border-color: #BABABA;
+}
+
+.combo-box{
+    -fx-font: 13px "Calibri light";
+    -fx-background-color: white;
+    -fx-border-color: #BABABA;
+}
+
+.combo-box .arrow, .combo-box .arrow-button{
+    -fx-background-color: transparent;
+}
+
+
+.table-view{
+    -fx-border-color:lightgray;
+    -fx-background-color: white;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+}
+
+
+
+.table-column{
+    -fx-font: 13px "Calibri light";
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: black;
+    
+}
+.table-column:odd{
+        -fx-background-color: white;
+        -fx-font: 13px "Calibri light";
+        -fx-text-fill:black;
+}
+.table-column:hover{
+   box-shadow: inset 0 -1px rgba(0,0,0,5.25);
+}
+
+.table-column:selected{
+    -fx-background-color:#FFFFFF;
+}
+
+#InfoText{
+    -fx-text-fill: #00726C;
+}
+#menu{
+    -fx-cursor:hand;
+}
+
+#menu:hover{
+    //-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); 
+    -fx-background-color: #000;
+    -fx-opacity:0.9;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+
+.tab-pane
+{
+    -fx-tab-min-width:125px;
+}
+
+.tab{
+    -fx-background-insets: 0 1 0 1,0,0;
+}
+.tab-pane .tab
+{
+    -fx-background-color: white;
+}
+
+.tab-pane .tab:selected
+{
+    -fx-background-color:white;
+}
+
+.tab .tab-label { 
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Calibri light";
+}
+
+.tab:selected .tab-label { 
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
+}
+
+

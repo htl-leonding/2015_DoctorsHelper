@@ -1,0 +1,42 @@
+.root{
+    -fx-background-image: url("dh_backgroundLogin.png");
+}
+
+.text-field { 
+    -fx-font: 14px "Calibri light";
+    -fx-prompt-text-fill: #666666; 
+    -fx-background-radius: 0;
+    -fx-border-width: 0.1;
+    -fx-border-color: #BABABA;
+}
+
+.text-field:focused{
+    -fx-border-width: 1;
+    -fx-border-color: #0072C6;
+    -fx-background-insets: 0,0,0;
+    -fx-background-radius: 0,0,0;
+}
+
+.label{
+    -fx-text-fill: #0072C6;
+    -fx-text-alignment: center;
+}
+
+
+
+.button{
+    -fx-font-family: "Calibri light";
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+
+    -fx-padding: 10 22 5 22;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+
+    -fx-background-color: #0072C6;
+    -fx-text-fill: #FFFFFF;
+}
+
+.button:hover{
+    -fx-background-color: #008DC6;
+}

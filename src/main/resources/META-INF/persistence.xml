@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="SchooldoctorPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>entity.Student</class>
+    <class>entity.Member</class>
+    <class>entity.Document</class>
+    <class>entity.Disease</class>
+    <class>entity.Gymrelease</class>
+    <class>entity.ParentMessage</class>
+    <class>entity.Checkup</class>
+    <class>entity.Trip</class>
+    <properties>
+      <property name="eclipselink.target-database" value="DERBY"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby:SchoolDoctor;create=true"/>
+      <property name="javax.persistence.jdbc.password" value="app"/>
+      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+      <property name="javax.persistence.jdbc.user" value="app"/>
+      <property name="eclipselink.ddl-generation" value="create-tables"/>
+      <property name="eclipselink.session.customizer" value="model.ReconnectionCustomization"/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="MemoryDbPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>entity.Student</class>
+    <class>entity.Member</class>
+    <class>entity.Document</class>
+    <class>entity.Disease</class>
+    <properties>
+      <property name="eclipselink.target-database" value="DERBY"/>
+      <!-- embedded memory db: jdbc:derby:memory:myDB;create=true -->
+      <!-- remote memory db: jdbc:derby://myhost:1527/memory:myDB;create=true -->
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/memory:testdb;create=true"/>
+      <property name="javax.persistence.jdbc.password" value="app"/>
+      <property name="javax.persistence.jdbc.user" value="app"/>
+      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+      <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+    </properties>
+  </persistence-unit>
+</persistence>
