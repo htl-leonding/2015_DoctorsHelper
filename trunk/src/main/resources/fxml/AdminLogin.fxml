@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefWidth="225.0" stylesheets="@../styles_visuals/login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminController">
+   <top>
+      <Label alignment="CENTER" minHeight="50.0" text="Admin - Konsole" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </top>
+   <bottom>
+      <FlowPane alignment="CENTER" maxHeight="150.0" orientation="VERTICAL" prefWidth="200.0" vgap="10.0">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#onChangePassword" prefWidth="200.0" text="Passwort ändern    " />
+            <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#onDeleteUser" prefWidth="200.0" text="User löschen" />
+            <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#onCreateUser" prefWidth="200.0" text="Neuen User erstellen " />
+         </children>
+      </FlowPane>
+   </bottom>
+   <center>
+      <ListView fx:id="lvUsers" prefHeight="175.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </ListView>
+   </center>
+</BorderPane>

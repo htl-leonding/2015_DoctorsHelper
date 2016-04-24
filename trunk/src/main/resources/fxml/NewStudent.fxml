@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="151.0" prefWidth="221.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentController">
+<center><FlowPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="221.0" vgap="5.0" BorderPane.alignment="CENTER">
+<children><TextField fx:id="tfFirstName" prefHeight="27.0" prefWidth="190.0" promptText="Vorname" /><TextField fx:id="tfSurName" prefHeight="27.0" prefWidth="190.0" promptText="Nachname" /><TextField fx:id="tfClass" prefHeight="27.0" prefWidth="190.0" promptText="Klasse" />
+            <DatePicker fx:id="dpBirthDate" prefHeight="27.0" prefWidth="190.0" promptText="Geburtstag" />
+            <TextField fx:id="tfAddress" prefHeight="27.0" prefWidth="190.0" promptText="Adresse" />
+            <TextField fx:id="tfPhone" prefHeight="27.0" prefWidth="190.0" promptText="Telefon" /><FlowPane alignment="CENTER" hgap="50.0" prefHeight="19.0" prefWidth="190.0">
+<children><CheckBox fx:id="cbMale" mnemonicParsing="false" onAction="#cbMaleClicked" text="männlich" /><CheckBox fx:id="cbFemale" mnemonicParsing="false" onAction="#cbFemaleClicked" text="weiblich" />
+</children></FlowPane><FlowPane alignment="BOTTOM_LEFT" hgap="70.0" prefHeight="34.0" prefWidth="200.0">
+<children><Button id="button" mnemonicParsing="false" onAction="#onInsert" prefHeight="28.0" prefWidth="106.0" text="Einfügen" /><ImageView fitHeight="16.0" fitWidth="19.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#onExit" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../styles_visuals/dh_exitLogin.png" />
+</image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ImageView>
+</children></FlowPane>
+</children></FlowPane>
+</center>
+</BorderPane>

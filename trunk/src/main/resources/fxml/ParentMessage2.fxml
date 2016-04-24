@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+
+<AnchorPane prefHeight="362.0" prefWidth="462.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ParentMessageController">
+   <children>
+       <Label layoutX="12.0" layoutY="16.0" text="Probleme: " />
+       <TextField fx:id="tfProblem" layoutX="100" layoutY="14.0" prefHeight="25.0" prefWidth="100" promptText="Problem" />
+      <Button id="button" layoutX="250" layoutY="12.0" mnemonicParsing="false" onAction="#onAddProblem" prefHeight="32.0" prefWidth="200" text="Hinzufügen" textAlignment="CENTER" />
+       <Label layoutX="12.0" layoutY="50" text="Empfohlener Arzt: " />
+       <ComboBox fx:id="comboBox" layoutX="150" layoutY="50.0">
+          <items>
+              <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Arzt" />
+                  <String fx:value="Kinderarzt" />
+                  <String fx:value="Zahnarzt" />
+                  <String fx:value="Facharzt" />
+              </FXCollections>
+          </items>
+      </ComboBox>
+
+       <Label layoutX="12.0" layoutY="80" text="Welcher Facharzt?" />
+       <TextField fx:id="tfDocType" layoutX="150" layoutY="80" prefHeight="25.0" prefWidth="100" promptText="Facharzt für" />
+
+      <Button id="button" layoutX="12.0" layoutY="321.0" mnemonicParsing="false" onAction="#onSave" prefHeight="32.0" prefWidth="78.0" text="OK" textAlignment="CENTER" />
+      <Button id="button" layoutX="100.0" layoutY="321.0" mnemonicParsing="false" onAction="#onCreatePDF" prefHeight="32.0" prefWidth="111.0" text="PDF" textAlignment="CENTER" />
+
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="416.0" layoutY="321.0" onMouseClicked="#onExit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../styles_visuals/dh_exitLogin.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label fx:id="lbMessage" layoutX="223.0" layoutY="325.0" prefHeight="25.0" prefWidth="178.0" />
+   </children>
+</AnchorPane>

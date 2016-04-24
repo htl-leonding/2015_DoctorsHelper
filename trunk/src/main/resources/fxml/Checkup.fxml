@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="borderPane" maxHeight="600.0" minHeight="600.0" minWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CheckupController">
+   <top>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Vorname:" />
+            <Label id="lbFirstname" fx:id="lbFirstname" text="Label" GridPane.columnIndex="1" />
+            <Label text="Nachname:" GridPane.rowIndex="1" />
+            <Label id="lbLastname" fx:id="lbLastname" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Geburtsdatum:" GridPane.columnIndex="2" />
+            <Label id="lbBirthdate" fx:id="lbBirthdate" text="Label" GridPane.columnIndex="3" />
+            <Label text="Geschlecht:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label id="lbSex" fx:id="lbSex" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+   </top>
+   <center>
+      <ScrollPane fitToWidth="true" prefViewportHeight="952.5" prefViewportWidth="803.0650634765625">
+         <content>
+            <Pane>
+               <children>
+                  <GridPane hgap="5.0" nodeOrientation="LEFT_TO_RIGHT" snapToPixel="false" vgap="5.0" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="0.0" percentWidth="23.0" prefWidth="150.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="0.0" percentWidth="100.0" prefWidth="0.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="-Infinity" percentHeight="0.0" prefHeight="2.5" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="3.0" minHeight="0.0" percentHeight="0.0" prefHeight="3.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="-Infinity" percentHeight="0.0" prefHeight="2.5" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="60.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="1.0" percentHeight="0.0" prefHeight="1.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="1.0" percentHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="1.0" percentHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="0.0" prefHeight="1.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="0.0" prefHeight="2.5" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Asthmabronch.:" GridPane.rowIndex="3" />
+                        <Label text="BCG Impfung:" GridPane.rowIndex="4" />
+                        <Label text="Allergie:" GridPane.rowIndex="5" />
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="Nein" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="asthma" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="JA" toggleGroup="$asthma" />
+                           </children>
+                        </GridPane>
+                        <GridPane layoutX="310.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="Nein" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="impfung" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="JA" toggleGroup="$impfung" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="0.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane layoutX="310.0" layoutY="124.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="Nein" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="allergie" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="JA" toggleGroup="$allergie" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <Label text="Diabetesmellitus:" GridPane.rowIndex="6" />
+                        <Label GridPane.rowIndex="7" />
+                        <Label text="Brillenträger:" GridPane.rowIndex="8" />
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="Nein" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="diabetes" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="JA" toggleGroup="$diabetes" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" GridPane.columnSpan="2" />
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="8">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="Nein" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="brillenträger" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="JA" toggleGroup="$brillenträger" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <Label text="Schielen:" GridPane.rowIndex="9" />
+                        <Label text="Visus:" GridPane.rowIndex="10" />
+                        <Label text="Hörvermögen:" GridPane.rowIndex="11" />
+                        <GridPane layoutX="310.0" layoutY="184.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="Nein" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="schielen" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="JA" toggleGroup="$schielen" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane layoutX="310.0" layoutY="226.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                           <children>
+                              <RadioButton lineSpacing="1.0" mnemonicParsing="false" selected="true" text="einseitig herabgesetzt" wrapText="true" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="visus" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" selected="true" text="6/6 bds." toggleGroup="$visus" />
+                              <RadioButton lineSpacing="1.0" mnemonicParsing="false" text="beidseitig herabgesetzt" toggleGroup="$visus" wrapText="true" GridPane.columnIndex="2" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="34.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane layoutX="310.0" layoutY="268.0" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="einseitig behindert" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="hörvermögen" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" selected="true" text="normal" toggleGroup="$hörvermögen" />
+                              <RadioButton mnemonicParsing="false" text="beidseitig behindert" toggleGroup="$hörvermögen" GridPane.columnIndex="2" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="34.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" GridPane.columnSpan="2" GridPane.rowIndex="12" />
+                        <Label text="Sprachfehler:" GridPane.rowIndex="13" />
+                        <Label text="Nase:" GridPane.rowIndex="14" />
+                        <GridPane layoutX="160.0" layoutY="434.0" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="Nein" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="sprachfehler" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="JA" toggleGroup="$sprachfehler" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane layoutX="160.0" layoutY="490.0" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="Atmung chronisch behindert" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="nasen" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" selected="true" text="frei" toggleGroup="$nasen" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <Label text="Tonsillen:" GridPane.rowIndex="15" />
+                        <GridPane layoutX="160.0" layoutY="317.0" GridPane.columnIndex="1" GridPane.rowIndex="15">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="krankhaft verändert" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="tonsillen" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" selected="true" text="normal" toggleGroup="$tonsillen" />
+                              <RadioButton mnemonicParsing="false" text="entfernt" toggleGroup="$tonsillen" GridPane.columnIndex="2" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="34.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <Pane layoutX="10.0" layoutY="286.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" GridPane.columnSpan="2" GridPane.rowIndex="16" />
+                        <Label text="Zähne:" GridPane.rowIndex="17" />
+                        <Label text="Gebißstellung:" GridPane.rowIndex="18" />
+                        <Pane layoutX="10.0" layoutY="377.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" GridPane.columnSpan="2" GridPane.rowIndex="19" />
+                        <GridPane layoutX="160.0" layoutY="362.0" GridPane.columnIndex="1" GridPane.rowIndex="17">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="34.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="60.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <CheckBox fx:id="cbUntersMSpatel" mnemonicParsing="false" text="Unters. m. Spatel" />
+                              <CheckBox fx:id="cbUntersMSpiegelUSonde" mnemonicParsing="false" text="Unters. m. Spiegel u. Sonde" wrapText="true" GridPane.columnIndex="1" />
+                              <CheckBox fx:id="cbGesund" mnemonicParsing="false" text="gesund" GridPane.columnIndex="2" />
+                              <CheckBox fx:id="cbSaniert" mnemonicParsing="false" text="saniert" GridPane.rowIndex="1" />
+                              <CheckBox fx:id="cbKariös" mnemonicParsing="false" text="kariös" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                        <GridPane layoutX="160.0" layoutY="347.0" GridPane.columnIndex="1" GridPane.rowIndex="18">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="Fehlstellung in Behandlung" wrapText="true" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="gebis" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" selected="true" text="normal" toggleGroup="$gebis" />
+                              <RadioButton mnemonicParsing="false" text="Fehlstellung o. Behandl." toggleGroup="$gebis" GridPane.columnIndex="2" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="34.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <Label text="Schilddrüse:" GridPane.rowIndex="20" />
+                        <GridPane layoutX="160.0" layoutY="438.0" GridPane.columnIndex="1" GridPane.rowIndex="20">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="nur tastbar vergrößert" wrapText="true" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="schilddrüse" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" selected="true" text="normal" toggleGroup="$schilddrüse" />
+                              <RadioButton mnemonicParsing="false" text="sichtbar vergrößert" toggleGroup="$schilddrüse" GridPane.columnIndex="2" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="34.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <Label text="Haut:" GridPane.rowIndex="21" />
+                        <GridPane layoutX="160.0" layoutY="493.0" GridPane.columnIndex="1" GridPane.rowIndex="21">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="chron. Hautleiden" wrapText="true" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="haut" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" selected="true" text="normal" toggleGroup="$haut" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <Label text="Herz und Gefäße:" GridPane.rowIndex="22" />
+                        <GridPane layoutX="160.0" layoutY="523.0" GridPane.columnIndex="1" GridPane.rowIndex="22">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="organ. Herz- und Gefäßerkrankung" wrapText="true" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="herz" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" selected="true" text="normal" toggleGroup="$herz" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <Label text="Lunge:" GridPane.rowIndex="23" />
+                        <Label text="Bauch:" GridPane.rowIndex="24" />
+                        <Label text="Wirbelsäule u. Brustkorb:" wrapText="true" GridPane.rowIndex="26" />
+                        <Label text="Arme und Hände:" GridPane.rowIndex="27" />
+                        <Label text="Beine und Füße:" GridPane.rowIndex="28" />
+                        <Label text="Nervensystem:" GridPane.rowIndex="29" />
+                        <GridPane layoutX="160.0" layoutY="320.0" GridPane.columnIndex="1" GridPane.rowIndex="23">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="chron. rezid. Bronchitis" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="lunge" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" selected="true" text="normal" toggleGroup="$lunge" />
+                              <RadioButton mnemonicParsing="false" text="Asthma" toggleGroup="$lunge" GridPane.columnIndex="2" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="34.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="24">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="Hernien" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="bauch" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" selected="true" text="normal" toggleGroup="$bauch" />
+                              <RadioButton mnemonicParsing="false" text="Sonstiges" toggleGroup="$bauch" GridPane.columnIndex="2" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="34.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="26">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="Haltungsschwäche" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="wirbelsäule" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" selected="true" text="normal" toggleGroup="$wirbelsäule" />
+                              <RadioButton mnemonicParsing="false" text="Fehlform" toggleGroup="$wirbelsäule" GridPane.columnIndex="2" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="34.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="27">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="Fehlform o. Funktionsbeh." wrapText="true" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="arme" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" selected="true" text="normal" toggleGroup="$arme" />
+                              <RadioButton mnemonicParsing="false" text="Fehlform m. Funktionsbeh." toggleGroup="$arme" wrapText="true" GridPane.columnIndex="2" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="34.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="28">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="Fehlform o. Funktionsbeh." wrapText="true" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="beine" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" selected="true" text="normal" toggleGroup="$beine" />
+                              <RadioButton mnemonicParsing="false" text="Fehlform m. Funktionsbeh." toggleGroup="$beine" wrapText="true" GridPane.columnIndex="2" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="34.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="29">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="veget. und psych. Labil" wrapText="true" GridPane.columnIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="nervensystem" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" selected="true" text="normal" toggleGroup="$nervensystem" />
+                              <RadioButton mnemonicParsing="false" text="organ. Nervenleiden" toggleGroup="$nervensystem" wrapText="true" GridPane.columnIndex="2" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="34.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <Pane layoutX="10.0" layoutY="492.0" prefHeight="2.0" prefWidth="200.0" style="-fx-background-color: black;" GridPane.columnSpan="2" GridPane.rowIndex="25" />
+                        <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                        <GridPane maxHeight="1.7976931348623157E308" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Gewicht (kg)">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="tfWeight" GridPane.columnIndex="1" />
+                              <Label text="Größe (cm)" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                              <TextField fx:id="tfHeight" GridPane.columnIndex="3" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </Pane>
+         </content>
+      </ScrollPane>
+   </center>
+   <bottom>
+      <GridPane vgap="2.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Sonstige Befunde:" GridPane.valignment="TOP" />
+            <TextArea fx:id="tfOtherDiagnoses" maxHeight="30.0" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="3" />
+            <Label text="Fachärztliche Untersuchung:" wrapText="true" GridPane.rowIndex="1" />
+            <Label text="Zur Behandlung:" GridPane.rowIndex="2" />
+            <Label text="Für" GridPane.rowIndex="3" />
+            <Label text="Schulärztliche Überwachung:" wrapText="true" GridPane.rowIndex="4" />
+            <TextArea fx:id="tfSpecialistExamination" maxHeight="30.0" prefHeight="70.0" prefWidth="200.0" promptText="wegen..." wrapText="true" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+            <TextArea fx:id="tfInTreatment" layoutX="413.0" layoutY="210.0" maxHeight="30.0" prefHeight="70.0" prefWidth="200.0" promptText="wegen..." wrapText="true" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+            <TextArea fx:id="tfExcursion" maxHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </GridPane.margin>
+            </TextArea>
+            <HBox alignment="CENTER_LEFT" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <RadioButton mnemonicParsing="false" text="JA" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="medicalCheckup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" selected="true" text="Nein" toggleGroup="$medicalCheckup" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="212.0" layoutY="210.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <RadioButton mnemonicParsing="false" text="JA" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="zuBehandlung" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" selected="true" text="Nein" toggleGroup="$zuBehandlung" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="212.0" layoutY="280.0" spacing="20.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <children>
+                  <RadioButton mnemonicParsing="false" selected="true" text="bedingt geeignet" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Excursion" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton mnemonicParsing="false" text="nicht geeignet" toggleGroup="$Excursion" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="413.0" layoutY="350.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <RadioButton mnemonicParsing="false" text="JA" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="medicaloverwatch" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" selected="true" text="Nein" toggleGroup="$medicaloverwatch" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </HBox>
+            <Button id="button" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSave" text="Speichern" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets bottom="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Button>
+            <Button id="button" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCancle" text="Abbrechen" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets bottom="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </bottom>
+   <padding>
+      <Insets left="5.0" right="5.0" top="5.0" />
+   </padding>
+</BorderPane>
