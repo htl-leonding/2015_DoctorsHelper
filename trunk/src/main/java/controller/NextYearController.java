@@ -44,7 +44,7 @@ public class NextYearController {
                     if (Character.isDigit(act)){
                         int number = Integer.parseInt(Character.toString(act));
                         if (number == lastYear){
-                            actClazz = "Schulabgänger";
+                            actClazz = "Schulabgänger(" + LocalDate.now().getYear() + ")";
                             break;
                         }
                         act = String.valueOf(number+1).charAt(0);

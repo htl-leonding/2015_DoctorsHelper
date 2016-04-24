@@ -6,6 +6,7 @@
 
 package controller;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import entity.Student;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -18,6 +19,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import model.Model;
 import model.WindowUtil;
 
@@ -48,7 +50,20 @@ public class StudentController {
 
     @FXML
     private void onInsert(ActionEvent event) {
-        if (!WindowUtil.checkValid(Arrays.asList(tfFirstName, tfSurName, tfClass, dpBirthDate), new LinkedList<>()))
+
+        boolean ret = false;
+
+        if (!cbFemale.isSelected() && !cbMale.isSelected()){
+            WindowUtil.changeBorderColor(cbFemale, Color.RED);
+            WindowUtil.changeBorderColor(cbMale, Color.RED);
+            ret = true;
+        } else{
+            WindowUtil.changeBorderColor(cbFemale, Color.web("#F4F4F4"));
+            WindowUtil.changeBorderColor(cbMale, Color.web("#F4F4F4"));
+            ret = false;
+        }
+
+        if (!WindowUtil.checkValid(Arrays.asList(tfFirstName, tfSurName, tfClass, dpBirthDate), new LinkedList<>()) || ret)
             return;
 
         //Checks if male or female is selected and creates the corresponding students
@@ -59,8 +74,13 @@ public class StudentController {
             s = new Student(tfFirstName.getText(), tfSurName.getText(), tfClass.getText(), dpBirthDate.getValue(), cbFemale.textProperty().get(), tfAddress.getText(), tfPhone.getText());
         } else return;
 
-        Model.getModel().addStudent(s);
-        tfFirstName.getScene().getWindow().hide();
+
+        if (Model.getModel().getAllStudents().stream().filter(st -> st.getFirstname().equals(s.getFirstname()) && st.getLastName().equals(s.getLastName()) && st.getBirthdate().equals(s.getBirthdate())).count() > 0) {
+            WindowUtil.showInfoDialog("Schüler existiert bereits");
+        }else{
+            Model.getModel().addStudent(s);
+            tfFirstName.getScene().getWindow().hide();
+        }
     }
 
     @FXML

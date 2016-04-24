@@ -85,13 +85,20 @@ public class WindowUtil {
         return true;
     }
 
-    private static void changeBorderColor(Control c, Color color) {
+    public static void changeBorderColor(Control c, Color color) {
         Platform.runLater(() -> c.setStyle("-fx-border-color: " + Integer.toHexString(color.hashCode()).substring(0, 6).toUpperCase()));
     }
 
     public static void showInfoDialog(String message){
         Alert infoAlert = new Alert(Alert.AlertType.ERROR);
         infoAlert.setHeaderText("Fehler");
+        infoAlert.setContentText(message);
+        infoAlert.showAndWait();
+    }
+
+    public static void showMessageDialog(String message){
+        Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);
+        infoAlert.setHeaderText("Team");
         infoAlert.setContentText(message);
         infoAlert.showAndWait();
     }

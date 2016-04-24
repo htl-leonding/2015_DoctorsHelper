@@ -70,7 +70,7 @@ public class MainViewController implements Initializable, Observer {
         lvStudent.setItems(model.getStudentList().sorted(new Comparator<Student>() {
             @Override
             public int compare(Student o1, Student o2) {
-                return o1.getLastName().compareTo(o2.getLastName());
+                return o1.getLastName().toUpperCase().compareTo(o2.getLastName().toUpperCase());
             }
         }));
         lvHistory.setItems(model.getStudentDocumentList());
@@ -145,7 +145,7 @@ public class MainViewController implements Initializable, Observer {
             lvStudent.setItems(Model.getModel().getStudentList().sorted(new Comparator<Student>() {
                 @Override
                 public int compare(Student o1, Student o2) {
-                    return o1.getLastName().compareTo(o2.getLastName());
+                    return o1.getLastName().toUpperCase().compareTo(o2.getLastName().toUpperCase());
                 }
             }));
 
@@ -265,8 +265,8 @@ public class MainViewController implements Initializable, Observer {
 
     @FXML
     private void onAbout(MouseEvent event) {
-        String about = "Applikation erstellt von: \nScheinecker Tobias\nStarzengruber Benedikt\nWickenhauser Lukas\n\nGeringfügig Beteiligte:\nSchöffmann Alexander\nSteininger Philipp\nStürzlinger Florian";
-        JOptionPane.showMessageDialog(null, about, "Über uns", JOptionPane.PLAIN_MESSAGE);
+        String about = "Applikation erstellt von: \nScheinecker Tobias\nStarzengruber Benedikt\nWickenhauser Lukas\n\nWeitere Beteiligte:\nSchöffmann Alexander\nSteininger Philipp\nStürzlinger Florian";
+        WindowUtil.showMessageDialog(about);
     }
 
     @FXML

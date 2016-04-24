@@ -91,7 +91,7 @@ public class GymreleaseController{
 
             try {
                 //PDFUtil.createGymReleasePDF(student, dpBeginn.getValue().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), dpEnd.getValue().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), tfReason.getText());
-                PDFUtil.createGeneralReleasePDF(student, "Turnen", dpBeginn.getValue().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), dpEnd.getValue().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), taAdditionalInfo.getText());
+                PDFUtil.createGeneralReleasePDF(student, "Turnen", dpBeginn.getValue().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), dpEnd.getValue().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), tfReason.getText() + ". " + taAdditionalInfo.getText());
                 WindowUtil.setLabelMessageAnimation(lbMessage, "PDF am Desktop gespeichert");
             } catch (DocumentException | FileNotFoundException e) {
                 e.printStackTrace();

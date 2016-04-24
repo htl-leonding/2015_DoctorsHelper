@@ -8,6 +8,7 @@ import javafx.scene.control.Control;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import model.Model;
 import model.WindowUtil;
 
@@ -71,7 +72,20 @@ public class UpdateStudentController {
 
     @FXML
     private void onInsert(ActionEvent event) {
-        if (!WindowUtil.checkValid(Arrays.asList(tfFirstName, tfSurName, tfClass), Arrays.asList(dpBirthDate)))
+
+        boolean ret = false;
+
+        if (!cbFemale.isSelected() && !cbMale.isSelected()){
+            WindowUtil.changeBorderColor(cbFemale, Color.RED);
+            WindowUtil.changeBorderColor(cbMale, Color.RED);
+            ret = true;
+        } else{
+            WindowUtil.changeBorderColor(cbFemale, Color.web("#F4F4F4"));
+            WindowUtil.changeBorderColor(cbMale, Color.web("#F4F4F4"));
+            ret = false;
+        }
+
+        if (!WindowUtil.checkValid(Arrays.asList(tfFirstName, tfSurName, tfClass), Arrays.asList(dpBirthDate)) || ret)
             return;
 
         LocalDate l = dpBirthDate.getValue();
@@ -85,9 +99,13 @@ public class UpdateStudentController {
         } else return;
 
 
+        if (Model.getModel().getAllStudents().stream().filter(st -> st.getFirstname().equals(s.getFirstname()) && st.getLastName().equals(s.getLastName()) && st.getBirthdate().equals(s.getBirthdate())).count() > 0) {
+            WindowUtil.showInfoDialog("Schüler existiert bereits");
+        }else{
+            Model.getModel().updateStudent(oldStudent, s);
+            tfFirstName.getScene().getWindow().hide();
+        }
 
-        Model.getModel().updateStudent(oldStudent, s);
-        tfFirstName.getScene().getWindow().hide();
     }
 
     @FXML

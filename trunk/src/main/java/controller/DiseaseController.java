@@ -1,5 +1,6 @@
 package controller;
 
+import com.itextpdf.text.DocumentException;
 import entity.Disease;
 import entity.Student;
 import javafx.collections.FXCollections;
@@ -8,9 +9,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import model.Model;
+import model.PDFUtil;
 import model.WindowUtil;
 
+import java.io.FileNotFoundException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.LinkedList;
 
@@ -27,6 +31,8 @@ public class DiseaseController {
     private DatePicker dpDate;
     @FXML
     private TextArea taAdditionalInformation;
+    @FXML
+    private Label lbPdfSaved;
 
     private Student student;
     private Disease disease;
@@ -68,5 +74,17 @@ public class DiseaseController {
     @FXML
     public void onExit(MouseEvent event) {
         tfDisease.getScene().getWindow().hide();
+    }
+
+    public void onSavePdf(ActionEvent actionEvent) {
+        if (WindowUtil.checkValid(Arrays.asList(dpDate, cbLevel, tfDisease), new LinkedList<>()))
+        {
+            try {
+                PDFUtil.createGeneralReleasePDF(student, "Generell", dpDate.getValue().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), dpDate.getValue().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), tfDisease.getText() + ". " + taAdditionalInformation.getText());
+                WindowUtil.setLabelMessageAnimation(lbPdfSaved, "PDF am Desktop gespeichert");
+            } catch (DocumentException | FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

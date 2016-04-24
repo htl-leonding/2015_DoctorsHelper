@@ -22,6 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.util.Pair;
+import model.WindowUtil;
 
 import javax.persistence.EntityManager;
 import javax.swing.*;
@@ -117,25 +118,35 @@ public class AdminController implements Initializable {
 
     public void onCreateUser(Event event) {
         Pair<String, String> result = showUserDialog(null);
-        dbUser.addUser(new Member(result.getKey(), result.getValue()));
-        lvUsers.setItems(FXCollections.observableList(dbUser.getAllUsers()));
-        //lvUsers.refresh();
+        if (result != null){
+            dbUser.addUser(new Member(result.getKey(), result.getValue()));
+            lvUsers.setItems(FXCollections.observableList(dbUser.getAllUsers()));
+        }
     }
 
     @FXML
     public void onChangePassword(Event event) {
         if (lvUsers.getSelectionModel().getSelectedItem() != null) {
             Pair<String,String> result = showUserDialog(lvUsers.getSelectionModel().getSelectedItem().getUsername());
-            dbUser.changeUser(lvUsers.getSelectionModel().getSelectedItem(), new Member(result.getKey(), result.getValue()));
-        }
+            if (result != null) {
+                dbUser.changeUser(lvUsers.getSelectionModel().getSelectedItem(), new Member(result.getKey(), result.getValue()));
+            }
+        } else WindowUtil.showInfoDialog("Kein Bentuzer ausgewählt");
     }
 
     public void onDeleteUser(Event event) {
         Member m = lvUsers.getSelectionModel().getSelectedItem();
 
-        if (m != null && !m.getUsername().equals("admin")){
-            dbUser.deleteUser(m);
-            lvUsers.setItems(FXCollections.observableList(dbUser.getAllUsers()));
-        }
+        if (m != null){
+            if (!m.getUsername().equals("admin")){
+                Alert securityQuestion = new Alert(Alert.AlertType.CONFIRMATION);
+                securityQuestion.setContentText("Wirklich löschen?");
+                securityQuestion.showAndWait();
+                if (securityQuestion.getResult() == ButtonType.OK) {
+                    dbUser.deleteUser(m);
+                    lvUsers.setItems(FXCollections.observableList(dbUser.getAllUsers()));
+                }
+            } else WindowUtil.showInfoDialog("Administrator kann nicht gelöscht werden");
+        } else WindowUtil.showInfoDialog("Kein Benutzer ausgewählt");
     }
 }

@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import model.Model;
 import model.PDFUtil;
 import model.WindowUtil;
@@ -66,8 +67,19 @@ public class ParentMessageController {
 
     @FXML
     public void onSave(ActionEvent event) {
-        if (!WindowUtil.checkNotNull(Arrays.asList(tfDocType, tfProblem)))
-            return;
+
+        if (problems.size() > 0){
+            if (!WindowUtil.checkNotNull(Arrays.asList(tfDocType, comboBox))){
+                WindowUtil.changeBorderColor(tfProblem, Color.web("F4F4F4"));
+                return;
+            }
+
+        } else{
+            WindowUtil.changeBorderColor(tfProblem, Color.RED);
+            if (!WindowUtil.checkNotNull(Arrays.asList(tfDocType, comboBox)))
+                return;
+        }
+
 
 
         //Adds a new Document to the database when it doesn't already exist
