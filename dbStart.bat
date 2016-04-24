@@ -1,1 +1,0 @@
-C:\DerbyDB\db-derby-10.12.1.1-bin\bin\startNetworkServer.bat
