@@ -3,6 +3,7 @@ package at.entity;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * Created by Phips on 17.08.2015.
@@ -11,7 +12,7 @@ import java.time.LocalDate;
 @Entity
 public class ParentMessage extends Document{
 
-    String problem;
+    List<String> problem;
     String doctor;
     String doctorType;
 
@@ -20,18 +21,17 @@ public class ParentMessage extends Document{
 
     }
 
-    public ParentMessage(Student student, String message, LocalDate timeStamp, String problem) {
+    public ParentMessage(Student student, String message, LocalDate timeStamp, List<String> problem) {
         super(student, message, timeStamp);
         this.problem = problem;
     }
     //endregion
 
     //region Properties
-    @Basic
-    public String getProblem() {
+    public List<String> getProblem() {
         return problem;
     }
-    public void setProblem(String header) {
+    public void setProblem(List<String> header) {
         this.problem = header;
     }
 

@@ -51,7 +51,7 @@ public class ParentMessageController {
         //Initializes the window with the data of pM when it exists
 
         if (pM != null) {
-            tfProblem.setText(pM.getProblem());
+            lvProblems.setItems(FXCollections.observableList(pM.getProblem()));
             tfDocType.setText(pM.getDoctor());
             comboBox.getSelectionModel().select(pM.getDoctorType());
         }
@@ -88,7 +88,7 @@ public class ParentMessageController {
             //pM.setHeader(tfHeader.getText());
         pM.setDoctor(tfDocType.getText());
         pM.setDoctorType((String) comboBox.getSelectionModel().getSelectedItem());
-        pM.setProblem(tfProblem.getText());
+        pM.setProblem(problems);
             pM.setInformation(tfDocType.getText());
             pM.setTimeStamp(LocalDate.now());
             Model.getModel().addDocument(pM);

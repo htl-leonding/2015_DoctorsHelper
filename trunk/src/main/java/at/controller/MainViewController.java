@@ -229,7 +229,14 @@ public class MainViewController implements Initializable, Observer {
                 UpdateStudentController controller = loader.getController();
 
                 controller.init(lvStudent.getSelectionModel().getSelectedItem());
+
                 openScene(scene, "");
+                scene.getWindow().setOnHiding(new EventHandler<WindowEvent>() {
+                    @Override
+                    public void handle(WindowEvent event) {
+                        lvStudent.setItems(Model.getModel().getStudentList());
+                    }
+                });
             } catch (IOException ex) {
                 Logger.getLogger(MainViewController.class.getName()).log(Level.SEVERE, null, ex);
             }
