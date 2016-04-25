@@ -24,7 +24,7 @@ import javax.persistence.EntityManager;
 /**
  *
  * @author wicki_000
- * edited by Phips97
+ * edited by Lukas Wickenhauser
  */
 public class Model extends Observable {
 

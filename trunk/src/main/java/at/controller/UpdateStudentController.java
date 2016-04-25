@@ -99,7 +99,7 @@ public class UpdateStudentController {
 
             Model.getModel().updateStudent(oldStudent, s);
             tfFirstName.getScene().getWindow().hide();
-        
+
     }
 
     @FXML
