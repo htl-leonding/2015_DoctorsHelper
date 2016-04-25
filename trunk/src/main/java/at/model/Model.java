@@ -185,7 +185,7 @@ public class Model extends Observable {
                         columns[2],    // clazz
                         birthDate,
                         columns[4].equals("FEMALE") ? "FEMALE" : "MALE");
-                for (Student student: getStudentList()) {
+                for (Student student: getAllStudents()) {
 
                     if(s.getFirstname().equals(student.getFirstname())&&
                             s.getLastName().equals(student.getLastName())&&

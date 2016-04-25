@@ -97,13 +97,9 @@ public class UpdateStudentController {
         } else return;
 
 
-        if (Model.getModel().getAllStudents().stream().filter(st -> st.getFirstname().equals(s.getFirstname()) && st.getLastName().equals(s.getLastName()) && st.getBirthdate().equals(s.getBirthdate())).count() > 0) {
-            WindowUtil.showInfoDialog("Schüler existiert bereits");
-        }else{
             Model.getModel().updateStudent(oldStudent, s);
             tfFirstName.getScene().getWindow().hide();
-        }
-
+        
     }
 
     @FXML
