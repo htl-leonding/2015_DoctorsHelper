@@ -6,7 +6,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="151.0" prefWidth="221.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentController">
+<BorderPane prefHeight="151.0" prefWidth="221.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.controller.StudentController">
 <center><FlowPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="221.0" vgap="5.0" BorderPane.alignment="CENTER">
 <children><TextField fx:id="tfFirstName" prefHeight="27.0" prefWidth="190.0" promptText="Vorname" /><TextField fx:id="tfSurName" prefHeight="27.0" prefWidth="190.0" promptText="Nachname" /><TextField fx:id="tfClass" prefHeight="27.0" prefWidth="190.0" promptText="Klasse" />
             <DatePicker fx:id="dpBirthDate" prefHeight="27.0" prefWidth="190.0" promptText="Geburtstag" />

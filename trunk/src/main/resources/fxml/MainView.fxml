@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="560.0" maxWidth="823.0" minHeight="560.0" minWidth="823.0" prefHeight="560.0" prefWidth="823.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController">
+<BorderPane maxHeight="560.0" maxWidth="823.0" minHeight="560.0" minWidth="823.0" prefHeight="560.0" prefWidth="823.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.controller.MainViewController">
     <top>
         <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="825.0" BorderPane.alignment="CENTER">
             <children>

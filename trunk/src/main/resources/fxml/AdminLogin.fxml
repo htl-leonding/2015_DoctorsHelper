@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefWidth="225.0" stylesheets="@../styles_visuals/login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminController">
+<BorderPane prefWidth="225.0" stylesheets="@../styles_visuals/login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.controller.AdminController">
    <top>
       <Label alignment="CENTER" minHeight="50.0" text="Admin - Konsole" BorderPane.alignment="CENTER">
          <font>

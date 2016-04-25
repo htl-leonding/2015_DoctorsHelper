@@ -1,22 +1,10 @@
 package entity;
 
-import db.DBUtil;
 import org.junit.*;
 import org.junit.runners.MethodSorters;
 
-import javax.persistence.EntityManager;
-
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.Month;
-import java.time.format.DateTimeFormatter;
-import java.util.Map;
-
-import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.collection.IsMapContaining.hasEntry;
-import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StudentTest {
